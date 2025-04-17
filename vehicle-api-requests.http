@@ -1,0 +1,51 @@
+@hostname = http://localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+### Criar um veículo
+POST {{host}}/vehicles
+Content-Type: {{contentType}}
+
+{
+  "placa": "XYZ1234",
+  "chassi": "9BWZZZ377VT004251",
+  "renavam": "12345678900",
+  "modelo": "Onix",
+  "marca": "Chevrolet",
+  "ano": "2023"
+}
+
+###
+
+### Listar todos os veículos
+GET {{host}}/vehicles
+
+###
+
+### Buscar veículo por ID (substitua pelo ID real)
+# @prompt vehicleId
+GET {{host}}/vehicles/{{vehicleId}}
+
+###
+
+### Atualizar veículo por ID
+# @prompt vehicleId
+PUT {{host}}/vehicles/{{vehicleId}}
+Content-Type: {{contentType}}
+
+{
+  "placa": "XYZ1234",
+  "chassi": "9BWZZZ377VT004251",
+  "renavam": "12345678900",
+  "modelo": "Onix Plus",
+  "marca": "Chevrolet",
+  "ano": "2024"
+}
+
+###
+
+### Deletar veículo por ID
+# @prompt vehicleId
+DELETE {{host}}/vehicles/{{vehicleId}}
+
